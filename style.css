@@ -1,0 +1,146 @@
+/* Reset base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* Full screen layout */
+.main-outer {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.horizon-outer {
+  width: 100%;
+  height: 60vh;
+  background-color: #426e80; 
+  position: relative;
+}
+
+/* Mountains */
+.mount {
+  height: 45vh;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Positions for each mountain */
+.mount-1 {
+  left: 0;
+  z-index: 3;
+  animation: float 5s ease-in-out infinite;
+}
+
+.mount-2 {
+  left: 30vw;
+}
+
+.mount-3 {
+  right: 0;
+}
+
+/* Road section */
+.road-outer {
+  width: 100%;
+  height: 30vh;
+  background-color: #3a3a3a;
+  position: relative;
+}
+
+.line {
+  border-top: 5px dashed white;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  
+}
+.walk-outer{
+    height: 10vh;
+    background-color: #331508;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.tree{
+    height: 250px;
+    position: relative;
+    
+}
+.car-box{
+    /* border: 1px solid red; */
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    animation-name: drive;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+/* .car-box img{
+    height: 100%;
+} */
+.car{
+    height: 100%;
+}
+/* Weel */
+.weel{
+    height: 50px;
+    width: 50px;
+    animation-name: weel-rotate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.weel-1{
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+}
+.weel-2{
+    position: absolute;
+    bottom: 20px;
+    right: 65px;
+}
+.cloud{
+    width: 300px;
+    position: absolute;
+    right: 0;
+}
+.cloud-1{
+    animation: move 10s infinite linear;
+}
+.cloud-2{
+    animation: move 20s infinite linear;
+}
+
+@keyframes weel-rotate{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes drive{
+    from{
+        left: -300px;
+    }
+    to{
+        left: 100%;
+    }
+}
+@keyframes move{
+    from{
+        right: -300px;
+    }
+    to{
+        right: 100%;
+    }
+}
